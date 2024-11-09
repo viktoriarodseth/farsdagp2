@@ -1,0 +1,146 @@
+<html>
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Farsdag</title>
+
+        <style>
+            body{
+                text-align: center;
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+        
+            }
+            h1{
+                color:black;
+                font-size: 100px;
+                font-style: oblique;
+                font-weight: bold;
+            }
+            #hjerte{
+                width: 400px;
+                height: 209px;
+                display: none;
+            }
+            #fardatter{
+                border: 4px groove black;
+            }
+            .p1{
+                font-size: 50px;
+
+            }
+
+            ul{
+                text-align: left;
+            }
+            #avslutning{
+                font-size: 20px;
+                text-align: right;
+                margin: 30px;
+            }
+
+            @media (max-width: 700px){
+                .container{
+                    width: 100%;
+                    font-size: 25px;
+                }
+                #hjertebilde{
+                    text-align: center;
+                    width: 100px;
+                    height: 50px;
+                    color: black;
+                    background-color: white;
+    
+                }
+                h1{
+                    color: black;
+                }
+                #fardatter{
+                    width: 300px;
+                    height: auto;
+                }
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="container">
+            <h1>Til pappa</h1>
+
+            <img src="farsdag/fardatter.jpg" alt="Far og datter" id="fardatter">
+            <h2>Gratulerer så masse med farsdagen!</h2>
+            <button id="hjertebilde">Trykk her</button>
+            <img src="farsdag/hjerte.jpg" alt="Hjerte" id="hjerte">
+            <p>Mens æ satt og studert poppa det opp en tanke i hodet mitt om at æ villa lag farsdagskort gjennom programmering. Og æ ble så glad, fordi æ fikk en god følelse av at æ har valgt riktig vei! Æ e glad for at æ går i dine fotspor og at æ kan spør dæ om hjelp hvis æ treng det. Det e koselig at vi har en egen greie som dæm tre andre ikke forstår:p</p>
+            <p>Du e så utrolig snill og god pappa, som æ hvert år må presiser at æ e heldig som har. Du e utrolig handy og har svar på et hvilket som helst spørsmål. </p>
+            <p>Her e en liste over ting æ sett pris på med dæ:</p>
+            
+            <ul>
+                <li>Du har god ro over dæ</li>
+                <li>Du e morsom</li>
+                <li>Du e hjelpsom</li>
+                <li>Du e reflektert og smart</li>
+                <li>Du sett familien din først</li>
+            </ul>
+
+            <p id="kryssav">Kryss av for hva du vil gjøre:</p>
+            <input type="checkbox" id="frokost">
+            <label for="frokost"> Felles frokost</label><br>
+            <input type="checkbox" id="middag">
+            <label for="frokost"> Spise god middag</label><br>
+            <input type="checkbox" id="kake">
+            <label for="kake"> Spise kake</label><br>
+            <input type="checkbox" id="film">
+            <label for="vehicle3">Se en film</label><br><br>
+
+            <p>Noe annet spesielt du vil gjøre i dag?</p>
+            <input type="text" id="txt" placeholder="Hva?">
+            <button id="hjelpe">Legg til</button>
+            <ul id="tjeneste"></ul>
+            
+            <p>Trykk på linken nedenfor for å se farsdagsgaven din som e på vei i posten…</p>
+            <a href="https://www.boozt.com/no/no/ralph-lauren-golf/dkt-cvc-solid-knt-sweatshirt_32704051/228429322?localLanguage=1&volume=0&cq_src=google_ads&cq_cmp=20864956729&cq_con=157479525595&cq_term=&cq_med=pla&cq_plac=&cq_net=g&cq_pos=&cq_plt=gp&gad_source=1&gclid=Cj0KCQiA57G5BhDUARIsACgCYnycbeagf_br3VZInJvrvS21ou_HBR_NfVAc87-H7Ozz2msc4wOwtaYaAorbEALw_wcB" id="link">Farsdagsgave</a>
+            <p>Håpe du får en fin dag og vet kor glad æ e i dæ!!</p>
+            
+            <p id="avslutning">Klem fra Vikki</p>
+        </div>
+
+
+        <script>
+            function hjerte(){
+                const bilde = document.getElementById("hjerte")
+                bilde.style.visibility = "visible" 
+                bilde.style.display = "block";
+                bilde.style.margin = "auto";
+            }
+
+            function gjøre(){
+                const taskText = document.getElementById("txt").value;
+                const mainlist = document.createElement("li");
+                const startlist = document.createTextNode(taskText);
+                mainlist.appendChild(startlist);
+                document.getElementById("tjeneste").appendChild(mainlist);
+
+            }
+
+            const knapp = document.getElementById("hjertebilde")
+            knapp.addEventListener("click", hjerte)
+
+            const button = document.getElementById("hjelpe");
+            button.addEventListener("click", gjøre);
+
+
+
+
+            
+      
+
+        </script>
+    </body>
+
+
+
+</html>
